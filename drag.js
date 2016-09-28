@@ -49,8 +49,8 @@
 	drag.prototype.event = function(){
 		var settings =this.settings;
 		var selector =settings.selector.drag;
-		var wrapWidth = this.dom.width()/(settings.scale ? settings.scale : 1),
-			wrapHeight = this.dom.height()/(settings.scale ? settings.scale : 1),
+		var wrapWidth = this.dom.width(),
+			wrapHeight = this.dom.height(),
 			wrapLeft = this.dom.offset().left/(settings.scale ? settings.scale : 1),
 			wrapTop = this.dom.offset().top/(settings.scale ? settings.scale : 1);
 
@@ -65,8 +65,8 @@
 			block.removeClass("cur-grab").addClass("cur-grabbing");
 			outer.dom.find(settings.selector.drag).css("zIndex",1);
 			block.css("zIndex",2);
-			var width = block.width()/(settings.scale ? settings.scale : 1);
-			var height = block.height()/(settings.scale ? settings.scale : 1);
+			var width = block.width();
+			var height = block.height();
 
 			var left= block.offset().left/(settings.scale ? settings.scale : 1),
 				top = block.offset().top/(settings.scale ? settings.scale : 1),
