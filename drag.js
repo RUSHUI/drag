@@ -7,12 +7,11 @@
 
 	 	var settings = $.extend({},$.fn.Drag.DEFAULTS.SETTINGS,ops);
 
-	 	this.each(function(){
+	 	return this.each(function(){
 
 	 		var elm = $(this),instance = new drag(elm,settings); 
 	 		elm.data("drag",instance); 	
 	 	});
-
 	 }
 
 	 function drag(){
@@ -32,13 +31,15 @@
 	 	this.dom.find(this.settings.selector.drag).css({"position":"position"}).addClass("cur-grab");
 
 	 	this.regEvent();
-	 	window.onresize=function(){
-			this.event();
-		}.bind(this);
 	 };
 
 	 drag.prototype.regEvent = function(){
 	 	this.event();
+	 	this.dom.unbind("ctn-resize");
+	 	this.dom.bind("ctn-resize",function(e,data){
+	 		console.log(data);
+	 		this.setScale(data.scale);
+	 	}.bind(this))
 
 	 };
 	 drag.prototype.setScale=function(num){

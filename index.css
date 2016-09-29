@@ -13,6 +13,7 @@ body{
 .container{
 	width:19.2rem;
 	height:10.8rem;
+	transform-origin:top left;
 	transition: all .6s ease-in-out;
 	background-color: #ddd;
 	position: relative;
