@@ -47,8 +47,11 @@
 	 };
 
 	drag.prototype.event = function(){
+
 		var settings =this.settings;
 		var selector =settings.selector.drag;
+
+		//缩放后外容器的left,top,width,height都根据缩放发生变化
 		var wrapWidth = this.dom.width(),
 			wrapHeight = this.dom.height(),
 			wrapLeft = this.dom.offset().left/(settings.scale ? settings.scale : 1),
@@ -60,11 +63,11 @@
 			e.preventDefault();
 			var outer = e.data.ths;
 
-
 			var block = $(this);
 			block.removeClass("cur-grab").addClass("cur-grabbing");
 			outer.dom.find(settings.selector.drag).css("zIndex",1);
 			block.css("zIndex",2);
+			//拖拽对象块也被缩放，换算还原
 			var width = block.width();
 			var height = block.height();
 
@@ -140,7 +143,7 @@
 			mouseMove:function(){ console.log("mousemove") },
 			mouseUp  :function(){ console.log("mouseup") }
 		},
-		scale:.8	
+		scale:1	
 
 	}
 
