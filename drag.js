@@ -52,17 +52,20 @@
 		var settings =this.settings;
 		var selector =settings.selector.drag;
 
-		//缩放后外容器的left,top,width,height都根据缩放发生变化
-		var wrapWidth = this.dom.width(),
-			wrapHeight = this.dom.height(),
-			wrapLeft = this.dom.offset().left/(settings.scale ? settings.scale : 1),
-			wrapTop = this.dom.offset().top/(settings.scale ? settings.scale : 1);
+		
 
 		this.dom.off("mousedown");
 		this.dom.on("mousedown",settings.selector.drag,{ths:this},function(e){
 			e.stopPropagation();
 			e.preventDefault();
 			var outer = e.data.ths;
+
+
+//缩放后外容器的left,top,width,height都根据缩放发生变化
+		var wrapWidth = outer.dom.width(),
+			wrapHeight = outer.dom.height(),
+			wrapLeft = outer.dom.offset().left/(settings.scale ? settings.scale : 1),
+			wrapTop = outer.dom.offset().top/(settings.scale ? settings.scale : 1);
 
 			var block = $(this);
 			block.removeClass("cur-grab").addClass("cur-grabbing");
@@ -112,11 +115,14 @@
 					diffOffset.top=maxTop;
 				}
 				
-
 				block.css({
-					left: diffOffset.left +"px",
-					top: diffOffset.top + "px"
+					left: diffOffset.left/100 +"rem",
+					top: diffOffset.top/100 + "rem"
 				});
+				// block.css({
+				// 	left: diffOffset.left +"px",
+				// 	top: diffOffset.top + "px"
+				// });
 
 				settings.callback.mouseMove.call(ths,e);
 

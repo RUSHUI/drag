@@ -44,12 +44,12 @@
 			docAspectRatio = docWidth / docHeight;//文档宽高比
 			winAspectRatio = winWidth / winHeight;//视（窗）口宽高比
 
-			// if(winWidth<minWidth){
-			// 	$(document).width(minWidth);
-			// }
-			// if(winHeight<minHeight){
-			// 	$(document).height(minHeight);
-			// }
+			if(winWidth<minWidth){
+				$(document.body).width(minWidth);
+			}
+			if(winHeight<minHeight){
+				$(document.body).height(minHeight);
+			}
 			if(docAspectRatio === winAspectRatio)
 				console.log("文档根节点宽高与视口保持一致");
 			else

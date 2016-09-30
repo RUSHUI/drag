@@ -1,7 +1,8 @@
 
 $(function(){										//html element
 
-	$(".container").Resize().Drag({
+	$(".container").Resize();
+	$(".container").Drag({
 		selector:{
 			drag:".drag-block"
 		},//拖拽区
