@@ -1,0 +1,51 @@
+html{
+	font-size: 100px;
+}
+html,body{
+	height:100%;
+	margin: 0;
+}
+
+body{
+	background-color: white;
+}
+
+.container{
+	width:19.2rem;
+	height:10.8rem;
+	transform-origin:top left;
+	transition: all .6s ease-in-out;
+	background-color: #ddd;
+	position: relative;
+}
+.drag-block{
+	width: 2rem;
+	height:2rem;
+	position: absolute;
+	font-size: 18px;
+	background-color: white;
+	box-shadow: 0 0 0.25rem 0px green inset;
+}
+.drag{
+
+	left: 0.2rem;
+	top:0.5rem;
+}
+.drop{
+
+	left: 5.2rem;
+	top:0.5rem;
+}
+.cur-grab:hover {
+    cursor: -webkit-grab;
+    cursor: -moz-grab;
+    cursor: grab;
+}
+.cur-grabbing:hover {
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+    cursor: grabbing;
+}
+.cur-moving{
+	cursor: move;
+}
