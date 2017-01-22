@@ -1,0 +1,30 @@
+{
+  "name": "dragdrop",
+  "version": "1.0.0",
+  "description": "This is a test project for dragdrop behind transform-scale",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RUSHUI/drag.git"
+  },
+  "keywords": [
+    "dragdrop",
+    "drag"
+  ],
+  "author": "rushui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RUSHUI/drag/issues"
+  },
+  "homepage": "https://github.com/RUSHUI/drag#readme"
+}
