@@ -11,8 +11,6 @@ body{
 }
 
 .container{
-	width:19.2rem;
-	height:10.8rem;
 	transform-origin:top left;
 	transition: all .6s ease-in-out;
 	background-color: #ddd;
@@ -26,14 +24,15 @@ body{
 	background-color: white;
 	box-shadow: 0 0 0.25rem 0px green inset;
 }
+.drop-container{
+	height:3rem;
+	width: 80%;
+	margin:3rem auto;
+	box-shadow: 0 0 0.25rem 0px #333 inset;
+}
 .drag{
 
 	left: 0.2rem;
-	top:0.5rem;
-}
-.drop{
-
-	left: 5.2rem;
 	top:0.5rem;
 }
 .cur-grab:hover {
